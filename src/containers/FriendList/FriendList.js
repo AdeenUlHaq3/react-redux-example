@@ -1,11 +1,17 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './style.css';
+import selectedFriend from './actions';
+import { bindActionCreators } from 'redux';
 
 class FriendList extends Component {
-
     renderFriendsList() {
-        return this.props.friends.map(friend => <li key={friend.name}>{friend.name}</li>)
+        const { friends, selectedFriend } = this.props;
+        return friends.map(friend => <li 
+            key={friend.name} 
+            onClick={ () => selectedFriend(friend) }>
+            {friend.name}
+            </li>)
     }
 
     render() {
@@ -24,4 +30,8 @@ function mapStateToProps(state) {
     };
 }
 
-export default connect(mapStateToProps)(FriendList);
+function mapDispatchToProps(dispatch) {
+    return bindActionCreators({ selectedFriend }, dispatch)
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(FriendList);

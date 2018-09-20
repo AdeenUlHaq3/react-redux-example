@@ -1,0 +1,1 @@
+export default (friend) => console.log(friend.name);
