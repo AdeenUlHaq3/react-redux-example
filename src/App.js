@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import FriendList from './components/FriendList/FriendList';
+import FriendList from './containers/FriendList/FriendList';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import AppState from './AppState';
