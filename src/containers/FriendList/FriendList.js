@@ -31,7 +31,7 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-    return bindActionCreators({ selectedFriend }, dispatch)
+    return bindActionCreators({ selectedFriend }, dispatch);
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(FriendList);

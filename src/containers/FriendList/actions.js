@@ -1,1 +1,6 @@
-export default (friend) => console.log(friend.name);
+export default (friend) => {
+    return {
+        type: 'SELECTED_FRIEND',
+        payload: friend
+    };
+}
